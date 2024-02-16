@@ -31,8 +31,18 @@
 	  <DebugSymbols>true</DebugSymbols>
 	  <WarningLevel>4</WarningLevel>
 	</PropertyGroup>
+	<PropertyGroup>
+        <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="ZXing.Net" Version="0.16.9" />
+		<None Include="LICENSE.txt">
+            <Pack>true</Pack>
+            <PackagePath></PackagePath>
+            <Visible>True</Visible>
+        </None>
+		<None Include="README.md" Pack="true" PackagePath="\"/>
 	</ItemGroup>
 
 	<ItemGroup>

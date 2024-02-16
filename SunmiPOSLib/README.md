@@ -3,26 +3,6 @@
 
 MauiSunmiPrint is a lightweight Android library designed for Maui applications, simplifying the integration of customizable receipt and invoice printing on Sunmi Smart Mobile Terminals.
 
-## Key Features
-
-- **Effortless Integration**: Streamline receipt and invoice printing in Maui Android apps with minimal code.
-
-- **Customizable Text Settings**: Easily adjust text appearance, including boldness and font size.
-
-- **QR Code and Barcode Printing**: Print QR codes and barcodes seamlessly for enhanced functionality.
-
-- **Enhanced User Experience**: Elevate user experience with a convenient solution for generating and printing essential documents.
-
-- **Minimal Code, Maximum Impact**: Achieve powerful printing functionality with concise and intuitive API usage.
-
-## Community and License
-
-- **Community Support**: Join a growing developer community for shared insights and collaborative improvement.
-
-- **Open Source Flexibility**: Licensed under MIT, offering flexibility for modification and distribution.
-
-Simplify receipt and invoice printing in Maui Android apps with MauiSunmiPrint, ensuring a user-friendly and customizable experience.
-
 ## Getting Started
 
 follow the steps below:
@@ -39,19 +19,11 @@ Install-Package SunmiPOSLib
 
 **or**
 
-- (Use **.Net Cli** to install)
-
-```bash
-dotnet add package SunmiPOSLib
-```
-
-**or**
-
 1. Add the SunmiPrint NuGet package to your Maui project by adding the following line to your .csproj file:
 
    ```xml
    <ItemGroup>
-       <PackageReference Include="SunmiPOSLib" Version="1.0.0" />
+       <PackageReference Include="MauiSunmiPrint" Version="1.0.0" />
    </ItemGroup>
 
 
@@ -60,18 +32,17 @@ This command install SunmiPOSLib with your project.
 Enjoy 🎉
 
 ## Usage
-
 ```csharp
 var builder = MauiApp.CreateBuilder();
 builder
     .UseMauiApp<App>()
-    .**UseSunmiPrinter()**  <!-- Add this line -->
+    .UseSunmiPrinter()  <!-- Add this line -->
     .ConfigureFonts(fonts =>
     {
         fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
         fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
     });
-builder.Services.**AddSingleton(SunmiPrinter.Current);**  <!-- Add this line to initialize printer connection -->
+builder.Services.AddSingleton(SunmiPrinter.Current);  <!-- Add this line to initialize printer connection -->
 ```
 
 ### ❤️ Example Using C#
@@ -210,13 +181,3 @@ PackageInfo = new PackageInfo(versionName, versionCode);
 ## 🧑‍🤝‍🧑 Contributing
 
 We welcome open an issue if you have any trouble.
-
-## 📝 License
-
-[MIT License](https://github.com/uvesshaikh/SunmiPrinter/LICENSE) Copyright (c) 2024 MTM Uves.
-
-### ❤️ Support 
-
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/shaikhuves)
-
-<img src="https://github.com/uvesshaikh/SunmiPrinter/coffeebuy" width="170">
