@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SunmiSampleApp.Views.TextPage"
+             xmlns:titlebar="clr-namespace:SunmiSampleApp.Views"
+             Title="TextPage">
+    <Shell.TitleView>
+        <titlebar:TitleBar TitleText="Impressão de Texto"/>
+    </Shell.TitleView>
+    
+    <ContentPage.Content>
+
+        <StackLayout Orientation="Vertical" BackgroundColor="#181A26">
+           
+            
+            <FlexLayout 
+                JustifyContent="SpaceBetween"
+                Padding="10, 0 , 10, 5"
+                >
+                <Label 
+                    Text="text typeface" 
+                    TextColor="White" 
+                    FontSize="18"
+                    ></Label>
+
+                <StackLayout Orientation="Horizontal" Padding="4">
+                    <Label 
+                        Text="Type monospace" 
+                        TextColor="Gray"
+                        FontSize="15"
+                        ></Label>
+                </StackLayout>
+            </FlexLayout>
+
+            <FlexLayout 
+                JustifyContent="SpaceBetween"
+                Padding="10, 0 ,10, 5"
+                >
+                <FlexLayout.GestureRecognizers>
+                    <TapGestureRecognizer 
+                        Tapped="OnClickCharSet"
+                        ></TapGestureRecognizer>
+                </FlexLayout.GestureRecognizers>
+
+                <Label 
+                    Text="char set" 
+                    TextColor="White" 
+                    FontSize="18"
+                    ></Label>
+
+                <StackLayout Orientation="Horizontal" Padding="4">
+                    <Label 
+                        x:Name="CharSetLabel" 
+                        TextColor="Gray"
+                        FontSize="15"
+                        ></Label>
+
+                    <Image
+                        Source="back.png" 
+                        Rotation="180"
+                        WidthRequest="30"
+                        BackgroundColor="#181A26"
+                        
+                        ></Image>
+                </StackLayout>
+            </FlexLayout>
+
+            <StackLayout
+                Padding="10, 0, 10, 5"
+                >
+                <FlexLayout
+                    JustifyContent="SpaceBetween"
+                    >
+                    <Label
+                        Text="Text size"
+                        TextColor="White"
+                        FontSize="18"
+                        ></Label>
+
+                    <Label
+                        x:Name="TextSizeLabel"
+                        Text="12"
+                        TextColor="Gray"
+                        ></Label>
+
+                </FlexLayout>
+                <Slider 
+                    x:Name="TextSizeSlider" 
+                    Maximum="36" 
+                    Minimum="12" 
+                    Value="12" 
+                    ValueChanged="SliderChanged" 
+                    ></Slider>
+
+            </StackLayout>
+
+            <StackLayout Padding="10, 0, 10, 5">
+                <FlexLayout 
+                BackgroundColor="#464851"
+                JustifyContent="Center"
+                Padding="10"
+                >
+                    <Label
+                    Text="bold"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    FontSize="15"
+                    ></Label>
+                    <CheckBox 
+                    x:Name="isBoldCheckBox"
+                    Color="White" 
+                    IsChecked="False"
+                    ></CheckBox>
+                    <Label
+                    Text="underline"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    FontSize="15"
+                    ></Label>
+                    <CheckBox 
+                    x:Name="isUnderlineCheckBox"
+                    Color="White"
+                    IsChecked="False"
+                    ></CheckBox>
+                </FlexLayout>
+            </StackLayout>
+
+            <StackLayout Padding="10, 0, 10, 5">
+                <Editor 
+                x:Name="EditorLabel"
+                TextColor="Black"
+                BackgroundColor="White"
+                IsSpellCheckEnabled="True"
+                IsTextPredictionEnabled="True"
+                HeightRequest="250"
+                ></Editor>
+            </StackLayout>
+
+            <Button Text="Print" Clicked="OnPrint" TextColor="White" BackgroundColor="Red"></Button>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

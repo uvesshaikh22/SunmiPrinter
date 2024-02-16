@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:titlebar="clr-namespace:SunmiSampleApp.Views" xmlns:local="clr-namespace:SunmiSampleApp.ViewModels"
+             x:Class="SunmiSampleApp.Views.PrinterInfoPage"
+             Title="PrinterInfoPage">
+        <Shell.TitleView>
+        <titlebar:TitleBar TitleText="Printer information"/>
+    </Shell.TitleView>
+
+    <ContentPage.Content>
+        <FlexLayout Direction="Column"
+                    JustifyContent="SpaceBetween"
+                    BackgroundColor="{StaticResource backgroundColor}">
+            <FlexLayout.BindingContext>
+                <local:InfoViewModel/>
+            </FlexLayout.BindingContext>
+            <StackLayout Padding="8,0"
+                         Spacing="20">
+
+                <StackLayout Margin="0,20,0,0"
+                             Orientation="Horizontal">
+                    <Label Grid.Row="0"
+                           Text="Serial number"
+                           FontSize="Medium"
+                           VerticalOptions="CenterAndExpand"/>
+                    <Label Grid.Row="0"
+                        Grid.Column="1"
+                        Text="{Binding PrinterInfo.SerialNo}"
+                        Opacity=".5"
+                        FontSize="Small"
+                        HorizontalOptions="EndAndExpand"
+                        VerticalOptions="CenterAndExpand"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Printer model"
+                           FontSize="Medium"
+                           VerticalOptions="CenterAndExpand"/>
+                    <Label Text="{Binding PrinterInfo.DeviceModel}"
+                           Opacity=".5"
+                           FontSize="Small"
+                           HorizontalOptions="EndAndExpand"
+                           VerticalOptions="CenterAndExpand"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Firmware version"
+                           FontSize="Medium"
+                           VerticalOptions="CenterAndExpand"/>
+                    <Label Text="{Binding PrinterInfo.FirmwareVersion}"
+                           Opacity=".5"
+                           FontSize="Small"
+                           HorizontalOptions="EndAndExpand"
+                           VerticalOptions="CenterAndExpand"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Print size"
+                           FontSize="Medium"
+                           VerticalOptions="CenterAndExpand"/>
+                    <Label Text="{Binding PrinterInfo.Paper}"
+                           Opacity=".5"
+                           FontSize="Small"
+                           HorizontalOptions="EndAndExpand"
+                           VerticalOptions="CenterAndExpand"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Printed distance"
+                           FontSize="Medium"
+                           VerticalOptions="CenterAndExpand"/>
+                    <Label Text="{Binding PrinterInfo.PrintedDistance}"
+                           Opacity=".5"
+                           FontSize="Small"
+                           HorizontalOptions="EndAndExpand"
+                           VerticalOptions="CenterAndExpand"/>
+                </StackLayout>
+
+                <BoxView HeightRequest="0.5"
+                         BackgroundColor="{StaticResource foregroundColor}"
+                         Opacity="0.1"/>
+                
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Service version"
+                           FontSize="Medium"
+                           VerticalOptions="CenterAndExpand"/>
+                    <Label Text="{Binding PackageInfo.versionName}"
+                           Opacity=".5"
+                           FontSize="Small"
+                           HorizontalOptions="EndAndExpand"
+                           VerticalOptions="CenterAndExpand"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Development version"
+                           FontSize="Medium"
+                           VerticalOptions="CenterAndExpand"/>
+                    <Label Text="{Binding PackageInfo.versionCode}"
+                           Opacity=".5"
+                           FontSize="Small"
+                           HorizontalOptions="EndAndExpand"
+                           VerticalOptions="CenterAndExpand"/>
+                </StackLayout>
+
+                <BoxView HeightRequest="0.5"
+                         BackgroundColor="{StaticResource foregroundColor}"
+                         Opacity="0.1"/>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Print wizard version"
+                           FontSize="Medium"
+                           VerticalOptions="CenterAndExpand"/>
+                    <Label Text="1.0"
+                           Opacity=".5"
+                           FontSize="Small"
+                           HorizontalOptions="EndAndExpand"
+                           VerticalOptions="CenterAndExpand"/>
+                </StackLayout>
+            </StackLayout>
+        </FlexLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SunmiSampleApp.Views.QrcodePage"
+             xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
+             xmlns:titlebar="clr-namespace:SunmiSampleApp.Views"
+             Title="QrcodePage">
+     <Shell.TitleView>
+        <titlebar:TitleBar TitleText="QRCode"/>
+    </Shell.TitleView>
+
+    <ContentPage.Content>
+
+        <FlexLayout 
+            BackgroundColor="#181A26" 
+            Direction="Column"
+            JustifyContent="SpaceBetween">
+
+            <StackLayout Orientation="Vertical" FlexLayout.Grow="2">
+
+                <!-- QrCode -->
+                <BoxView 
+                    HeightRequest=".5" 
+                    Margin="16,0,16,0" 
+                    BackgroundColor="#FFF" Opacity=".1"/>
+                <FlexLayout 
+                    AlignContent="Center" 
+                    Padding="16" 
+                    JustifyContent="SpaceBetween"
+                >
+                    <FlexLayout.GestureRecognizers>
+                        <TapGestureRecognizer 
+                            Tapped="OnQrcodeChange"
+                        />
+                    </FlexLayout.GestureRecognizers>
+
+                    <Label Text="QrCode" TextColor="#FFF"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name="QrcodeLabel" TextColor="#FFFFFF" Opacity=".5"/>
+                        <Image 
+                            WidthRequest="20" 
+                            RotationY="180"
+                            Source="back.png" 
+                            BackgroundColor="#181A26" 
+                        />
+                    </StackLayout>
+                </FlexLayout>
+
+                <!-- QrCode size -->
+                <BoxView 
+                    HeightRequest=".5" 
+                    Margin="16,0,16,0" 
+                    BackgroundColor="#FFF" Opacity=".1"/>
+                <FlexLayout 
+                    AlignContent="Center" 
+                    Padding="16" 
+                    JustifyContent="SpaceBetween"
+                >
+                    <FlexLayout.GestureRecognizers>
+                        <TapGestureRecognizer 
+                            Tapped="OnSizeChange"
+                        />
+                    </FlexLayout.GestureRecognizers>
+                    <Label Text="QR-Code size" TextColor="#FFF"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name="SizeLabel" TextColor="#FFFFFF" Opacity=".5"/>
+                        <Image
+                            WidthRequest="20" 
+                            RotationY="180"
+                            Source="back.png" 
+                            BackgroundColor="#181A26" 
+                        />
+                    </StackLayout>
+                </FlexLayout>
+
+                <!-- Correction level -->
+                <BoxView 
+                    HeightRequest=".5" 
+                    Margin="16,0,16,0" 
+                    BackgroundColor="#FFF" Opacity=".1"/>
+                <FlexLayout 
+                    AlignContent="Center" 
+                    Padding="16" 
+                    JustifyContent="SpaceBetween">
+                    <FlexLayout.GestureRecognizers>
+                        <TapGestureRecognizer 
+                            Tapped="OnLevelChange"
+                        />
+                    </FlexLayout.GestureRecognizers>
+                    <Label Text="Correction level" TextColor="#FFF"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name="LevelLabel" TextColor="#FFFFFF" Opacity=".5"/>
+                        <Image
+                            WidthRequest="20" 
+                            RotationY="180"
+                            Source="back.png" 
+                            BackgroundColor="#181A26" 
+                        />
+                    </StackLayout>
+                </FlexLayout>
+
+                <!-- Alignment -->
+                <BoxView 
+                    HeightRequest=".5" 
+                    Margin="16,0,16,0" 
+                    BackgroundColor="#FFF" Opacity=".1"/>
+                <FlexLayout 
+                    AlignContent="Center" 
+                    Padding="16" 
+                    JustifyContent="SpaceBetween"
+                >
+                    <FlexLayout.GestureRecognizers>
+                        <TapGestureRecognizer 
+                            Tapped="OnAlignChange"
+                        />
+                    </FlexLayout.GestureRecognizers>
+                    <Label Text="Alignment" TextColor="#FFF"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name="AlignLabel" TextColor="#FFFFFF" Opacity=".5"/>
+                        <Image
+                            WidthRequest="20" 
+                            RotationY="180"
+                            Source="back.png" 
+                            BackgroundColor="#181A26" 
+                        />
+                    </StackLayout>
+                </FlexLayout>
+
+                <!-- To cut paper -->
+                <BoxView 
+                    HeightRequest=".5" 
+                    Margin="16,0,16,0" 
+                    BackgroundColor="#FFF" Opacity=".1"/>
+                <FlexLayout 
+                    AlignContent="Center" 
+                    Padding="16" 
+                    JustifyContent="SpaceBetween"
+                >
+                    <Label Text="To cut paper" TextColor="#FFF"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Switch x:Name="CutLabel" ThumbColor="#E6e6e6" OnColor="#969696" />
+                    </StackLayout>
+                </FlexLayout>
+
+            </StackLayout>
+            <StackLayout HorizontalOptions="Center">
+                <zxing:BarcodeGeneratorView
+                        x:Name="BarcodeImageView"
+                        HorizontalOptions="FillAndExpand"  
+                        VerticalOptions="StartAndExpand" 
+                        Format="QrCode"
+                        WidthRequest="100"
+                        HeightRequest="100">
+                </zxing:BarcodeGeneratorView>
+            </StackLayout>
+
+            <Button 
+                Text="Print" 
+                TextColor="#FFF"
+                FontAttributes="Bold" 
+                Clicked="OnPrint"
+                BackgroundColor="#F00"
+            />
+        </FlexLayout>
+    </ContentPage.Content>
+</ContentPage>

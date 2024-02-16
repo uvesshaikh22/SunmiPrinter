@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SunmiSampleApp.Views.TitleBar">
+    <Label x:Name="NavTitle"
+        FontAttributes="Bold"
+        FontSize="Large"
+        VerticalOptions="FillAndExpand"
+        VerticalTextAlignment="End"/>
+    <Label x:Name="NavSubtitle"
+        FontSize="Small"
+        VerticalOptions="End"
+        VerticalTextAlignment="Start"/>
+</StackLayout>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:titlebar="clr-namespace:SunmiSampleApp.Views"
+             x:Class="SunmiSampleApp.Views.TablePage"
+             Title="TablePage">
+    <Shell.TitleView>
+        <titlebar:TitleBar TitleText="Form"/>
+    </Shell.TitleView>
+
+    <StackLayout BackgroundColor="#181A26" Orientation="Vertical">
+        <ScrollView VerticalOptions="FillAndExpand">
+            <StackLayout x:Name="MainStack">
+                <StackLayout x:Name="TableStack">
+
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+        
+        <Button Clicked="OnPrint" Text="Print" TextColor="White" BackgroundColor="Red"></Button>
+        
+    </StackLayout>
+</ContentPage>
