@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>SunmiPOSLib</id>
+    <version>1.1.0</version>
+    <authors>Shaikh Uves</authors>
+    <owners>Shaikh Uves</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>MauiSunmiPrint is a lightweight Android library designed for Maui applications, simplifying the integration of customizable receipt and invoice printing on Sunmi Smart Mobile Terminals.</description>
+    <releaseNotes>MauiSunmiPrint is a lightweight Android library designed for Maui applications, simplifying the integration of customizable receipt and invoice printing on Sunmi Smart Mobile Terminals.</releaseNotes>
+    <copyright>Copyright 2024 Shaikh Uves</copyright>
+    <tags>utility helper</tags>
+    <dependencies>
+      <dependency id="Zxing.Net" version="0.16.9" />
+    </dependencies>
+    <repository type="git" url="https://github.com/uvesshaikh/SunmiPrinter.git" />
+    <license type="file" >LICENSE.txt</license>
+    <readme>README.md</readme>
+    <icon>sunmi.png</icon>
+  </metadata>
+</package>

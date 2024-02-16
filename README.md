@@ -29,6 +29,8 @@ follow the steps below:
 
 ### ⏳ Installation
 
+[![NuGet Version]](https://www.nuget.org/packages/SunmiPOSLib/) [![NuGet Downloads]](https://www.nuget.org/packages/SunmiPOSLib/)
+
 Use this **Quickstart** command to install in your project :
 
 - (Use **nuget** package manager to install (recommended))
@@ -219,4 +221,4 @@ We welcome open an issue if you have any trouble.
 
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/shaikhuves)
 
-<img src="https://github.com/uvesshaikh/SunmiPrinter/coffeebuy" width="170">
+<img src="https://github.com/uvesshaikh/SunmiPrinter/blob/main/coffeebuy.png" width="170">
