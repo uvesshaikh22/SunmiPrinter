@@ -53,6 +53,7 @@ Enjoy 🎉
 
 ## Usage
 
+```csharp
 var builder = MauiApp.CreateBuilder();
 builder
     .UseMauiApp<App>()
@@ -63,7 +64,7 @@ builder
         fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
     });
 builder.Services.**AddSingleton(SunmiPrinter.Current);**  <!-- Add this line to initialize printer connection -->
-
+```
 
 ### ❤️ Example Using C#
 
