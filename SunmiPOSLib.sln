@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1706.8
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SunmiPOSLib", "SunmiPOSLib\SunmiPOSLib.csproj", "{A5938D48-90E7-4A17-8BE7-240AB6287E93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SunmiSampleApp", "SunmiSampleApp\SunmiSampleApp.csproj", "{F2143988-72FC-44B5-9F2A-515FF16AA4C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A5938D48-90E7-4A17-8BE7-240AB6287E93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5938D48-90E7-4A17-8BE7-240AB6287E93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5938D48-90E7-4A17-8BE7-240AB6287E93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5938D48-90E7-4A17-8BE7-240AB6287E93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2143988-72FC-44B5-9F2A-515FF16AA4C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2143988-72FC-44B5-9F2A-515FF16AA4C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2143988-72FC-44B5-9F2A-515FF16AA4C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2143988-72FC-44B5-9F2A-515FF16AA4C9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {352532CB-ABB3-44FF-A3E8-EA4D5090B5BB}
+	EndGlobalSection
+EndGlobal
