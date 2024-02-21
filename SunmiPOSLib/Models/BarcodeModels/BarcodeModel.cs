@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using ZXing;
+using SunmiPOSLib.Enum;
 
 namespace SunmiPOSLib.Models
 {

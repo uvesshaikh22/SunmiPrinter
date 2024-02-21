@@ -64,6 +64,13 @@ namespace SunmiPOSLib.Services
         /// Send ESC/POS for the printer to print a invoices.
         /// </summary>
         bool PrintInvoices(List<Invoice> invoices);
+        /// <summary>
+        /// Sends ESC/POS commands to the printer for printing invoices with QR codes.
+        /// </summary>
+        /// <param name="invoices">The list of invoices with QR codes to be printed.</param>
+        /// <returns>True if the printing process is successful; otherwise, false.</returns>
+        bool PrintInvoicesWithQR(List<InvoiceWithQR> invoices);
+
 
         string GetPrinterSerialNo();
 

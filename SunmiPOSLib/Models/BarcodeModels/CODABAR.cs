@@ -1,13 +1,13 @@
 ﻿
 using System.Text.RegularExpressions;
-using ZXing;
+using SunmiPOSLib.Enum;
 
 namespace SunmiPOSLib.Models
 {
 
     public class CODABAR : BarcodeModel
     {
-        public CODABAR() : base(6, "CODABAR", BarcodeFormat.CODABAR)
+        public CODABAR() : base(6, "CODABAR", BarcodeFormat.Codabar)
         {
         }
 

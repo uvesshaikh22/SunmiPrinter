@@ -1,4 +1,7 @@
-﻿using SunmiPOSLib.Models;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using SunmiPOSLib.Models;
 using SunmiPOSLib.Services;
 
 namespace SunmiPOSLib;
@@ -76,6 +79,11 @@ public class PrinterConnection : IPrinterConnection
     }
 
     public bool PrintInvoices(List<Invoice> invoices)
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool PrintInvoicesWithQR(List<InvoiceWithQR> invoices)
     {
         throw new NotImplementedException();
     }

@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using ZXing;
+using SunmiPOSLib.Enum;
 
 namespace SunmiPOSLib.Models
 {
     public class CODE93 : BarcodeModel
     {
-        public CODE93() : base(7, "CODE93", BarcodeFormat.CODE_93)
+        public CODE93() : base(7, "CODE93", BarcodeFormat.Code93)
         {
         }
     }

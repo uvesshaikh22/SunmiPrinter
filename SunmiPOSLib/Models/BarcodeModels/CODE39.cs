@@ -1,11 +1,11 @@
 ﻿using System.Text.RegularExpressions;
-using ZXing;
+using SunmiPOSLib.Enum;
 
 namespace SunmiPOSLib.Models
 {
     public class CODE39 : BarcodeModel
     {
-        public CODE39() : base(4, "CODE39", BarcodeFormat.CODE_39)
+        public CODE39() : base(4, "CODE39", BarcodeFormat.Code39)
         {
         }
 

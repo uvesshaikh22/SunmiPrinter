@@ -23,7 +23,7 @@ Install-Package SunmiPOSLib
 
    ```xml
    <ItemGroup>
-       <PackageReference Include="MauiSunmiPrint" Version="1.0.0" />
+       <PackageReference Include="MauiSunmiPrint" Version="2.0.0" />
    </ItemGroup>
 
 
@@ -50,7 +50,7 @@ builder.Services.AddSingleton(SunmiPrinter.Current);  <!-- Add this line to init
 Import SunmiPOSLib Printer Class:
 
 ```csharp
-using using SunmiPOSLib;
+using SunmiPOSLib;
 using SunmiPOSLib.Models;
 ```
 
@@ -174,7 +174,6 @@ PackageInfo = new PackageInfo(versionName, versionCode);
 **Dependencies:**
 
 - .NET >7.0
-- ZXing.net (>= 0.16.9)
 
 **Stay up-to-date with the latest MauiSunmiPrint version for optimal project support. Currently in active development, frequent releases address issues and introduce enhancements. Your feedback is valuable—report any opportunities for improvement or issues you encounter**.
 

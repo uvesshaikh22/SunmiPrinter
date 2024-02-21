@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using ZXing;
+using SunmiPOSLib.Enum;
 
 namespace SunmiPOSLib.Models
 {
     public class EAN8 : NumericalOnlyBarcodeModel
     {
-        public EAN8() : base(3, "EAN8", BarcodeFormat.EAN_8)
+        public EAN8() : base(3, "EAN8", BarcodeFormat.Ean8)
         {
         }
 

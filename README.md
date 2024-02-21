@@ -29,7 +29,8 @@ follow the steps below:
 
 ### ⏳ Installation
 
-[![NuGet Version]](https://www.nuget.org/packages/SunmiPOSLib/) [![NuGet Downloads]](https://www.nuget.org/packages/SunmiPOSLib/)
+[![NuGet Version](https://img.shields.io/nuget/v/SunmiPOSLib.svg)](https://www.nuget.org/packages/SunmiPOSLib/)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/SunmiPOSLib.svg)](https://www.nuget.org/packages/SunmiPOSLib/)
 
 Use this **Quickstart** command to install in your project :
 
@@ -53,7 +54,7 @@ dotnet add package SunmiPOSLib
 
    ```xml
    <ItemGroup>
-       <PackageReference Include="SunmiPOSLib" Version="1.0.0" />
+       <PackageReference Include="MauiSunmiPrint" Version="2.0.0" />
    </ItemGroup>
 
 
@@ -81,7 +82,7 @@ builder.Services.**AddSingleton(SunmiPrinter.Current);**  <!-- Add this line to 
 Import SunmiPOSLib Printer Class:
 
 ```csharp
-using using SunmiPOSLib;
+using SunmiPOSLib;
 using SunmiPOSLib.Models;
 ```
 
@@ -191,7 +192,7 @@ PackageInfo = new PackageInfo(versionName, versionCode);
 - **Print Table Format:** Create and print tables with customizable content, widths, and alignments.
 - **Open Drawer:** Trigger the opening of the drawer with a simple command.
 - **Different Types of Printer Information:** Retrieve details like serial number, model, firmware version, printed distance, and paper type.
-
+- **multiple invoices:** support for multiple invoices with QR codes in 58mm printers, enhancing printing capabilities.
 ### 🖐 Requirements
 
 **Supported operating systems**:
@@ -205,7 +206,6 @@ PackageInfo = new PackageInfo(versionName, versionCode);
 **Dependencies:**
 
 - .NET >7.0
-- ZXing.net (>= 0.16.9)
 
 **Stay up-to-date with the latest MauiSunmiPrint version for optimal project support. Currently in active development, frequent releases address issues and introduce enhancements. Your feedback is valuable—report any opportunities for improvement or issues you encounter**.
 

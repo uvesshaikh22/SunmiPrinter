@@ -13,4 +13,16 @@ namespace SunmiPOSLib.Models
             Content = content;
         }
     }
+
+    public class InvoiceWithQR
+    {
+        public string Content { get; set; }
+        public string QRCode { get; set; }
+        public InvoiceWithQR()
+        {
+            Content = string.Empty;
+            QRCode = string.Empty;
+        }
+    }
+
 }

@@ -1,6 +1,7 @@
 ﻿using System;
-//using CommunityToolkit.Maui;
-using SunmiPOSLib.Services;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Maui.Hosting;
+
 namespace SunmiPOSLib;
 
 /// <summary>
@@ -17,7 +18,6 @@ public static class MauiAppBuilderExtensions
         this MauiAppBuilder builder)
     {
         builder = builder ?? throw new ArgumentNullException(nameof(builder));
-       // builder.UseMauiCommunityToolkit();
         builder.Services.AddSingleton(static _ => SunmiPrinter.Current);
 
         return builder;

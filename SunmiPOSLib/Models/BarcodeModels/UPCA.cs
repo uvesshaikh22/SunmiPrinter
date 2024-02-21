@@ -1,10 +1,12 @@
-﻿using ZXing;
+﻿
+
+using SunmiPOSLib.Enum;
 
 namespace SunmiPOSLib.Models
 {
     public class UPCA : NumericalOnlyBarcodeModel
     {
-        public UPCA() : base(0, "UPC-A", BarcodeFormat.UPC_A)
+        public UPCA() : base(0, "UPC-A", BarcodeFormat.UpcA)
         {
         }
 

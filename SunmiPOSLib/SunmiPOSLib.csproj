@@ -1,65 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-
 	<PropertyGroup>
-		<TargetFrameworks>net8.0-android</TargetFrameworks>
-		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
-		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
-		<!-- <TargetFrameworks>$(TargetFrameworks);net8.0-tizen</TargetFrameworks> -->
+		<TargetFrameworks>net8.0-android;net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
 		<UseMaui>true</UseMaui>
 		<SingleProject>true</SingleProject>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-		<SkipValidateMauiImplicitPackageReferences>true</SkipValidateMauiImplicitPackageReferences>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
-		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
-		<ReleaseVersion>1.0.1</ReleaseVersion>
-		<SynchReleaseVersion>false</SynchReleaseVersion>
-		<Configurations>Release;Debug</Configurations>
+		<Configurations>Release</Configurations>
 	</PropertyGroup>
 	<PropertyGroup>
-    <NuspecFile>SunmiPOS.nuspec</NuspecFile>
-    <NuspecProperties>version=$(PackageVersion)</NuspecProperties>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-ios|AnyCPU'">
-	  <CreatePackage>false</CreatePackage>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-ios|AnyCPU'">
-	  <CreatePackage>false</CreatePackage>
-	</PropertyGroup>
-	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-	  <DebugSymbols>true</DebugSymbols>
-	  <WarningLevel>4</WarningLevel>
-	</PropertyGroup>
+		<PackageId>$(AssemblyName)</PackageId>
+		<VersionPrefix>2.0.0</VersionPrefix>
+		<VersionSuffix>
+		</VersionSuffix>
+		<Version>2.0.0</Version>
+		<LangVersion>latest</LangVersion>
+		<Authors>Shaikh Uves</Authors>
+		<Owners>Shaikh Uves</Owners>
+		<Description>MauiSunmiPrint is a lightweight Android library designed for Maui applications, simplifying the integration of customizable receipt and invoice printing on Sunmi Smart Mobile Terminals.</Description>
+		<RequireLicenseAcceptance>true</RequireLicenseAcceptance>
+		<Copyright>Copyright 2024 Shaikh Uves</Copyright>
+		<PackageTags>maui dotnet maui-printing receipt-printing sunmi android nuget-package</PackageTags>
+		<PackageReleaseNotes>
+  <![CDATA[
+    ## Release Notes - Version 2.0.0
 
+    ### Resolved Issues:
+    - Fixed an issue where the MauiSunmiPrint package was not being included in the project.
 
+    ### New Features:
+    - Added support for multiple invoices with QR codes in 58mm printers, enhancing printing capabilities.
+
+    Thank you for using MauiSunmiPrint!
+  ]]>
+</PackageReleaseNotes>
+		<PackageIcon>sunmi.png</PackageIcon>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageLicenseFile>License.md</PackageLicenseFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<IncludeContentInPack>true</IncludeContentInPack>
+	</PropertyGroup>
+	<PropertyGroup>
+		<PackageProjectUrl>https://github.com/uvesshaikh/SunmiPrinter</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/uvesshaikh/SunmiPrinter.git</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+	</PropertyGroup>
 	<ItemGroup>
-	  <None Remove="Utils\Bitmap.aidl" />
-	  <None Remove="Utils\ICallback.aidl" />
-	  <None Remove="Utils\IWoyouService.aidl" />
-	  <None Remove="Utils\IYmodemSPI.aidl" />
-	  <None Remove="Platforms\Android\IYmodemSPI.aidl" />
-	  <None Remove="Platforms\Android\IWoyouService.aidl" />
-	  <None Remove="Platforms\Android\ICallback.aidl" />
-	  <None Remove="Platforms\Android\Bitmap.aidl" />
-	  <None Remove="Services\" />
-	  <None Remove="Models\" />
-	</ItemGroup>
+        <None Include="License.md">
+            <Pack>true</Pack>
+            <PackagePath></PackagePath>
+            <Visible>True</Visible>
+        </None>
+		<None Include="README.md">
+            <Pack>true</Pack>
+            <PackagePath></PackagePath>
+            <Visible>True</Visible>
+        </None>
+		<None Include="sunmi.png">
+            <Pack>true</Pack>
+            <PackagePath></PackagePath>
+            <Visible>True</Visible>
+        </None>
+    </ItemGroup>
 	<ItemGroup>
-	  <AndroidInterfaceDescription Include="Utils\Bitmap.aidl" />
-	  <AndroidInterfaceDescription Include="Utils\ICallback.aidl" />
-	  <AndroidInterfaceDescription Include="Utils\IWoyouService.aidl" />
-	  <AndroidInterfaceDescription Include="Utils\IYmodemSPI.aidl" />
-	  <AndroidInterfaceDescription Include="Platforms\Android\IYmodemSPI.aidl" />
-	  <AndroidInterfaceDescription Include="Platforms\Android\IWoyouService.aidl" />
-	  <AndroidInterfaceDescription Include="Platforms\Android\ICallback.aidl" />
-	  <AndroidInterfaceDescription Include="Platforms\Android\Bitmap.aidl" />
-	</ItemGroup>
-	<ItemGroup>
-	  <Folder Include="Services\" />
-	  <Folder Include="Models\" />
+		<AndroidInterfaceDescription Include="Utils\Bitmap.aidl" />
+		<AndroidInterfaceDescription Include="Utils\ICallback.aidl" />
+		<AndroidInterfaceDescription Include="Utils\IWoyouService.aidl" />
+		<AndroidInterfaceDescription Include="Utils\IYmodemSPI.aidl" />
+		<AndroidInterfaceDescription Include="Platforms\Android\IYmodemSPI.aidl" />
+		<AndroidInterfaceDescription Include="Platforms\Android\IWoyouService.aidl" />
+		<AndroidInterfaceDescription Include="Platforms\Android\ICallback.aidl" />
+		<AndroidInterfaceDescription Include="Platforms\Android\Bitmap.aidl" />
 	</ItemGroup>
 </Project>

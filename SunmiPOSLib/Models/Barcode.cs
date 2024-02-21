@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using SunmiPOSLib.Models;
-using static Android.Resource;
-using static Java.Util.Jar.Attributes;
+﻿using SunmiPOSLib.Enum;
 
 namespace SunmiPOSLib.Models
 {
@@ -43,7 +40,7 @@ namespace SunmiPOSLib.Models
         {
             Content = content;
             HRIPosition = hRIPosition;
-            Model = new BarcodeModel(0, "test", ZXing.BarcodeFormat.UPC_A);
+            Model = new BarcodeModel(0, "test", BarcodeFormat.UpcA);
             Width = width;
             Height = height;
             CutPaper = cutPaper;

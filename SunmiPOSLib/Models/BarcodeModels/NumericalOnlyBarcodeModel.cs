@@ -1,5 +1,5 @@
 ﻿using System.Text.RegularExpressions;
-using ZXing;
+using SunmiPOSLib.Enum;
 
 namespace SunmiPOSLib.Models
 {

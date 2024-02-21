@@ -9,6 +9,10 @@ using Android.Graphics;
 using Image = SunmiPOSLib.Models.Image;
 using Application = Android.App.Application;
 using SunmiPOSLib.Enum;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Linq;
 
 namespace SunmiPOSLib;
 
@@ -244,7 +248,29 @@ public class PrinterConnection : IPrinterConnection
             return false;
         }
     }
-
+    public bool PrintInvoicesWithQR(List<InvoiceWithQR> invoices)
+    {
+        if (!IsConnected()) return false;
+        try
+        {
+            foreach (InvoiceWithQR invoice in invoices)
+            {
+                SunmiPrinterService.Service.SetAlignment((int)AlignmentEnum.CENTER, null);
+                SendRawData(CommandUtils.BoldOff());
+                SunmiPrinterService.Service.PrintText(String.Join("", invoice.Content.ToArray()),null);
+                SunmiPrinterService.Service.SetFontSize(24, null);
+                SunmiPrinterService.Service.SetAlignment((int)AlignmentEnum.CENTER, null);
+                SendRawData(CommandUtils.GetQrcodeBytes(new QRcode(invoice.QRCode)));
+                LineWrap();
+                SendRawData(CommandUtils.CutPaper());
+            }
+            return true;
+        }
+        catch (Exception)
+        {
+            return false;
+        }
+    }
     public bool AdvancePaper()
     {
         if (!IsConnected()) throw new PrinterConnectionException();
